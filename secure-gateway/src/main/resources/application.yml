@@ -1,0 +1,20 @@
+server:
+  port: 8888
+app:
+  service:
+    topic-url: http://ec-topic
+    auth-url: http://ec-auth
+  jwt:
+    accesskey: 'CREATEDBYSUJIN_AT'
+spring:
+  data:
+    mongodb:
+      uri: "mongodb://13.125.242.146:29999"
+      database: "bigdata-analytics-platform"
+  application:
+    name: ec-secure-gateway
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7979/eureka
