@@ -12,14 +12,8 @@ import org.springframework.web.reactive.function.client.WebClient
 
 @Configuration
 class WebClientConfig {
-
-    @Value("\${app.service.topic-url}")
-    lateinit var topicServiceUrl: String
-
     @Value("\${app.service.auth-url}")
     lateinit var authServiceUrl: String
-
-
 
     @Bean("authServiceClient")
     @LoadBalanced
@@ -31,13 +25,4 @@ class WebClientConfig {
                 .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
     }
 
-    @Bean("topicServiceClient")
-    @LoadBalanced
-    //@Scope(value="prototype", proxyMode= ScopedProxyMode.TARGET_CLASS)
-    fun topicServiceClient() : WebClient.Builder{
-        return WebClient
-                .builder()
-                .baseUrl(topicServiceUrl)
-                .defaultHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
-    }
 }

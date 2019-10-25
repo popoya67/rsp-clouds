@@ -1,11 +1,38 @@
-server:
-  port: 7979
+
 spring:
   application:
     name: eureka-server
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:7979/eureka
+      defaultZone: http://zone1:7979/eureka/,http://zone2:7878/eureka/,http://zone3:7070/eureka/
     registerWithEureka: false
     fetchRegistry: false
+
+---
+server:
+  port: 7979
+spring:
+  profiles: zone1
+eureka:
+  instance:
+    hostname: zone1
+
+---
+server:
+  port: 7878
+spring:
+  profiles: zone2
+eureka:
+  instance:
+    hostname: zone2
+
+---
+server:
+  port: 7070
+spring:
+  profiles: zone3
+eureka:
+  instance:
+    hostname: zone3
+

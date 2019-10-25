@@ -14,23 +14,23 @@ class Routes {
             routeLocatorBuilder.routes {
                 route {
                     path("/customer/**")
-                    uri("http://localhost:8081/")
+                    uri("lb://ec-customer/")
                 }
                 route{
-                    path("/topic**", "/topicCategory**", "/topics**")
-                    uri("http://localhost:8082/")
+                    path("/topic/**", "/topicCategory/**", "/topics/**")
+                    uri("lb://ec-topic/")
                 }
                 route{
                     path("/auth/**")
-                    uri("http://localhost:8083/")
+                    uri("lb://ec-auth/")
                 }
                 route{
                     path("/menu/**")
-                    uri("http://localhost:8084/")
+                    uri("lb://ec-menu/")
                 }
                 route{
-                    path("/authenticate**")
-                    uri("http://localhost:8050/")
+                    path("/authenticate/**")
+                    uri("lb://ec-process-server/")
                 }
 //                route{
 //                    path("/**")

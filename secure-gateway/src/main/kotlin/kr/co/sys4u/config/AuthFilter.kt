@@ -19,6 +19,7 @@ import org.springframework.web.server.ServerWebExchange
 import org.springframework.web.server.WebFilter
 import org.springframework.web.server.WebFilterChain
 import reactor.core.publisher.Mono
+import java.util.*
 
 
 @Configuration
@@ -30,6 +31,9 @@ class AuthFilter(private val jwtValidator: JwtValidator
     @Value("\${app.jwt.accesskey}")
     private lateinit var accessSecretKey: String
 
+    @Value("\${app.open-api}")
+    private lateinit var openApis: List<String>
+
 
     override fun filter(exchange: ServerWebExchange, chain: WebFilterChain): Mono<Void> {
 
@@ -38,6 +42,16 @@ class AuthFilter(private val jwtValidator: JwtValidator
         }
 
         if(exchange.request.method === HttpMethod.OPTIONS) {
+            return chain.filter(exchange)
+        }
+
+        for (openApi in openApis) {
+            if(exchange.request.path.toString().startsWith(openApi)){
+                return chain.filter(exchange)
+            }
+        }
+
+        if(exchange.request.headers["origin"] == null){
             return chain.filter(exchange)
         }
 

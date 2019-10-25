@@ -2,10 +2,12 @@ server:
   port: 8888
 app:
   service:
-    topic-url: http://ec-topic
-    auth-url: http://ec-auth
+    auth-url: http://ec-secure-gateway
   jwt:
     accesskey: 'CREATEDBYSUJIN_AT'
+  open-api:
+    - /auth
+    - /authenticate
 spring:
   data:
     mongodb:
@@ -17,4 +19,4 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:7979/eureka
+      defaultZone: http://zone1:7979/eureka,http://zone2:7878/eureka,http://zone3:7070/eureka

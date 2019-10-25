@@ -20,6 +20,7 @@ class CorsFilter {
         corsConfig.addAllowedMethod(HttpMethod.POST)
         corsConfig.addAllowedMethod(HttpMethod.DELETE)
         corsConfig.addAllowedMethod(HttpMethod.PUT)
+        corsConfig.addAllowedHeader("content-type")
         corsConfig.addExposedHeader("X-MESSAGE")
         corsConfig.addAllowedHeader("X-Forward-Url")
         corsConfig.addExposedHeader("X-Forward-Url")
