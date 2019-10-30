@@ -6,6 +6,7 @@ app:
   jwt:
     accesskey: 'CREATEDBYSUJIN_AT'
   open-api: /auth,/authenticate
+  authenticated-api: customer-service, process-service, topic-service, menu-service
 spring:
   data:
     mongodb:
