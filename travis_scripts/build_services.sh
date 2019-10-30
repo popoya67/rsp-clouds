@@ -1,2 +1,2 @@
-echo "Building with travis commit of $BUILD_NAME ..."
+echo "Building ..."
 mvn clean package docker:build
