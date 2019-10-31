@@ -2,7 +2,7 @@ server:
   port: 8888
 app:
   service:
-    auth-url: http://ec-secure-gateway
+    auth-url: http://api-gateway
   jwt:
     accesskey: 'CREATEDBYSUJIN_AT'
   open-api: /auth,/authenticate
