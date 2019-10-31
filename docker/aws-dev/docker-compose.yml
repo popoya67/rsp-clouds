@@ -1,12 +1,38 @@
 version: '2'
 services:
-  eurekaserver:
+  eurekaserver1:
     image: popoya67/eureka
     mem_limit: 1073741824
     ports:
       - "7979:7979"
+    extra_hosts:
+      - "zone1:localhost"
+      - "zone2:localhost"
+      - "zone3:localhost"
+  eurekaserver2:
+    image: popoya67/eureka
+    mem_limit: 1073741824
+    ports:
+      - "7878:7878"
+    extra_hosts:
+      - "zone1:localhost"
+      - "zone2:localhost"
+      - "zone3:localhost"
+  eurekaserver3:
+    image: popoya67/eureka
+    mem_limit: 1073741824
+    ports:
+      - "7070:7070"
+    extra_hosts:
+      - "zone1:localhost"
+      - "zone2:localhost"
+      - "zone3:localhost"
   gatewayserver:
     image: popoya67/api-gateway
     mem_limit: 1073741824
     ports:
       - "8888:8888"
+    extra_hosts:
+      - "zone1:localhost"
+      - "zone2:localhost"
+      - "zone3:localhost"

@@ -20,3 +20,5 @@ RUN bash -c 'touch /eureka-springboot.jar'
 
 # Run the jar file
 ENTRYPOINT ["java","-Dspring.profiles.active=zone1","-jar","/eureka-springboot.jar"]
+ENTRYPOINT ["java","-Dspring.profiles.active=zone2","-jar","/eureka-springboot.jar"]
+ENTRYPOINT ["java","-Dspring.profiles.active=zone3","-jar","/eureka-springboot.jar"]
