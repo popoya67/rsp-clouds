@@ -183,7 +183,7 @@
                 <version>1.0.0</version>
                 <configuration>
                     <imageName>popoya67/${project.artifactId}</imageName>
-                    <dockerDirectory>${basedir}/target/dockerfile </dockerDirectory>
+                    <dockerDirectory>${basedir}/target/dockerfile</dockerDirectory>
                     <resources>
                         <resource>
                             <targetPath>/</targetPath>

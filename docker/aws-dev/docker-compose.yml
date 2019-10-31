@@ -1,11 +1,12 @@
 version: '2'
 services:
   eurekaserver:
-    image:   popoya67/eureka
-    #     mem_limit: 1073741824
+    image: popoya67/eureka
+    mem_limit: 1073741824
     ports:
       - "7979:7979"
   gatewayserver:
     image: popoya67/api-gateway
+    mem_limit: 1073741824
     ports:
       - "8888:8888"
