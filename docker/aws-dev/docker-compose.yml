@@ -9,24 +9,24 @@ services:
       - "zone1:127.0.0.1"
       - "zone2:127.0.0.1"
       - "zone3:127.0.0.1"
-  eurekaserver2:
-    image: popoya67/eureka
-    mem_limit: 1073741824
-    ports:
-      - "7878:7878"
-    extra_hosts:
-      - "zone1:127.0.0.1"
-      - "zone2:127.0.0.1"
-      - "zone3:127.0.0.1"
-  eurekaserver3:
-    image: popoya67/eureka
-    mem_limit: 1073741824
-    ports:
-      - "7070:7070"
-    extra_hosts:
-      - "zone1:127.0.0.1"
-      - "zone2:127.0.0.1"
-      - "zone3:127.0.0.1"
+#  eurekaserver2:
+#    image: popoya67/eureka
+#    mem_limit: 1073741824
+#    ports:
+#      - "7878:7878"
+#    extra_hosts:
+#      - "zone1:127.0.0.1"
+#      - "zone2:127.0.0.1"
+#      - "zone3:127.0.0.1"
+#  eurekaserver3:
+#    image: popoya67/eureka
+#    mem_limit: 1073741824
+#    ports:
+#      - "7070:7070"
+#    extra_hosts:
+#      - "zone1:127.0.0.1"
+#      - "zone2:127.0.0.1"
+#      - "zone3:127.0.0.1"
   gatewayserver:
     image: popoya67/api-gateway
     mem_limit: 1073741824
