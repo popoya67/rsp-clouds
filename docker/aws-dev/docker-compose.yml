@@ -7,8 +7,8 @@ services:
       - "7979:7979"
     extra_hosts:
       - "zone1:127.0.0.1"
-      - "zone2:127.0.0.1"
-      - "zone3:127.0.0.1"
+#      - "zone2:127.0.0.1"
+#      - "zone3:127.0.0.1"
 #  eurekaserver2:
 #    image: popoya67/eureka
 #    mem_limit: 1073741824
