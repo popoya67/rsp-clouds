@@ -2,7 +2,7 @@ version: '2'
 services:
   eurekaserver1:
     image: popoya67/eureka
-    mem_limit: 134217728
+    mem_limit: 1073741824
     ports:
       - "7979:7979"
 #    extra_hosts:
@@ -29,7 +29,7 @@ services:
 #      - "zone3:127.0.0.1"
   gatewayserver:
     image: popoya67/api-gateway
-    mem_limit: 134217728
+    mem_limit: 1073741824
     ports:
       - "8888:8888"
 #    extra_hosts:
