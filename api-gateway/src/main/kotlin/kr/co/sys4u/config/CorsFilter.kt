@@ -24,6 +24,8 @@ class CorsFilter {
         corsConfig.addExposedHeader("X-MESSAGE")
         corsConfig.addAllowedHeader("X-Forward-Url")
         corsConfig.addExposedHeader("X-Forward-Url")
+        corsConfig.addAllowedHeader("X-Service-Key")
+        corsConfig.addExposedHeader("X-Service-Key")
         corsConfig.addAllowedHeader("ACCESS-TOKEN")
         corsConfig.addExposedHeader("ACCESS-TOKEN")
 
