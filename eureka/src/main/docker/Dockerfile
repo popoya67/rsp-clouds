@@ -19,4 +19,4 @@ ADD eureka-1.0-SNAPSHOT-exec.jar eureka-springboot.jar
 RUN bash -c 'touch /eureka-springboot.jar'
 
 # Run the jar file
-ENTRYPOINT ["java","-Dspring.profiles.active=zone1","-jar","/eureka-springboot.jar"]
+ENTRYPOINT ["java","-jar","/eureka-springboot.jar"]
