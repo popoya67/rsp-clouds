@@ -5,6 +5,8 @@ services:
     mem_limit: 1073741824
     ports:
       - "7979:7979"
+    networks:
+      - "mybridge"
 #    extra_hosts:
 #      - "zone1:127.0.0.1"
 #      - "zone2:127.0.0.1"
@@ -32,6 +34,8 @@ services:
     mem_limit: 1073741824
     ports:
       - "8888:8888"
+    networks:
+      - "mybridge"
 #    extra_hosts:
 #      - "zone1:127.0.0.1"
 #      - "zone2:127.0.0.1"
