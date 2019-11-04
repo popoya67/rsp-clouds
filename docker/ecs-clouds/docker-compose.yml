@@ -1,6 +1,6 @@
 version: '2'
 services:
-  eurekaserver1:
+  eurekaserver:
     image: popoya67/eureka
     mem_limit: 1073741824
     ports:
