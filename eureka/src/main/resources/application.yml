@@ -7,8 +7,8 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://eurekaserver:7979/eureka
-      #defaultZone: http://zone1:7979/eureka/,http://zone2:7878/eureka/,http://zone3:7070/eureka/
+      #defaultZone: http://eurekaserver:7979/eureka
+      defaultZone: http://eurekaserver1:7979/eureka/,http://eurekaserver2:7878/eureka/,http://eurekaserver3:7070/eureka/
     registerWithEureka: false
     fetchRegistry: false
 
@@ -19,7 +19,7 @@ spring:
   profiles: zone1
 eureka:
   instance:
-    hostname: zone1
+    hostname: eurekaserver1
 
 ---
 server:
@@ -28,7 +28,7 @@ spring:
   profiles: zone2
 eureka:
   instance:
-    hostname: zone2
+    hostname: eurekaserver2
 
 ---
 server:
@@ -37,5 +37,5 @@ spring:
   profiles: zone3
 eureka:
   instance:
-    hostname: zone3
+    hostname: eurekaserver3
 

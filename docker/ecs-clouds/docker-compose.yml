@@ -1,42 +1,29 @@
 version: '2'
 services:
-  eurekaserver:
+  eurekaserver1:
     image: popoya67/eureka
-    mem_limit: 1073741824
     ports:
       - "7979:7979"
     networks:
-      - "mybridge"
-#    extra_hosts:
-#      - "zone1:127.0.0.1"
-#      - "zone2:127.0.0.1"
-#      - "zone3:127.0.0.1"
-#  eurekaserver2:
-#    image: popoya67/eureka
-#    mem_limit: 1073741824
-#    ports:
-#      - "7878:7878"
-#    extra_hosts:
-#      - "zone1:127.0.0.1"
-#      - "zone2:127.0.0.1"
-#      - "zone3:127.0.0.1"
-#  eurekaserver3:
-#    image: popoya67/eureka
-#    mem_limit: 1073741824
-#    ports:
-#      - "7070:7070"
-#    extra_hosts:
-#      - "zone1:127.0.0.1"
-#      - "zone2:127.0.0.1"
-#      - "zone3:127.0.0.1"
+      - "public"
+  eurekaserver2:
+    image: popoya67/eureka
+    ports:
+      - "7878:7878"
+    networks:
+      - "public"
+  eurekaserver3:
+    image: popoya67/eureka
+    ports:
+      - "7070:7070"
+    networks:
+      - "public"
   gatewayserver:
     image: popoya67/api-gateway
-    mem_limit: 1073741824
     ports:
       - "8888:8888"
     networks:
-      - "mybridge"
-#    extra_hosts:
-#      - "zone1:127.0.0.1"
-#      - "zone2:127.0.0.1"
-#      - "zone3:127.0.0.1"
+      - "public"
+networks:
+  public:
+    external: true
