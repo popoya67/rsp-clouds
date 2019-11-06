@@ -1,4 +1,4 @@
-version: '2'
+version: '3'
 services:
   eurekaserver1:
     image: popoya67/eureka
@@ -6,18 +6,24 @@ services:
       - "7979:7979"
     networks:
       - "public"
+    environment:
+      - spring.profiles.active=zone1
   eurekaserver2:
     image: popoya67/eureka
     ports:
       - "7878:7878"
     networks:
       - "public"
+    environment:
+      - spring.profiles.active=zone2
   eurekaserver3:
     image: popoya67/eureka
     ports:
       - "7070:7070"
     networks:
       - "public"
+    environment:
+      - spring.profiles.active=zone3
   gatewayserver:
     image: popoya67/api-gateway
     ports:
