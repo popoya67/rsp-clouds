@@ -9,8 +9,9 @@ eureka:
     service-url:
       #defaultZone: http://eurekaserver:7979/eureka
       defaultZone: http://eurekaserver1:7979/eureka/,http://eurekaserver2:7878/eureka/,http://eurekaserver3:7070/eureka/
-    registerWithEureka: false
-    fetchRegistry: false
+    registerWithEureka: true
+    fetchRegistry: true
+
 
 ---
 server:
