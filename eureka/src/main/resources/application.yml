@@ -11,7 +11,8 @@ eureka:
       defaultZone: http://eurekaserver1:7979/eureka/,http://eurekaserver2:7878/eureka/,http://eurekaserver3:7070/eureka/
     registerWithEureka: true
     fetchRegistry: true
-
+  server:
+    renewalPercentThreshold: 0.49
 
 ---
 server:
